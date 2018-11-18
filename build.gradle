@@ -12,18 +12,7 @@ buildscript {
 		kotlinVersion = "1.2.60"
 	}
 	repositories {
-		maven {
-			url "http://vclau1p0314.cna.com:8081/repository/maven-central/"
-		}
-		maven {
-			url "http://vclau1p0314.cna.com:8081/repository/pcf-pipeline/"
-		}
-		maven {
-			url "http://vclau1p0314.cna.com:8081/repository/spring-milestone/"
-		}
-		maven {
-			url "http://vclau1p0314.cna.com:8081/repository/spring-snapshot/"
-		}
+		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -34,24 +23,13 @@ buildscript {
 	}
 }
 
-group = 'com.cna'
+group = 'com.mikemolenda'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	maven {
-		url "http://vclau1p0314.cna.com:8081/repository/maven-central/"
-	}
-	maven {
-		url "http://vclau1p0314.cna.com:8081/repository/pcf-pipeline/"
-	}
-	maven {
-		url "http://vclau1p0314.cna.com:8081/repository/spring-milestone/"
-	}
-	maven {
-		url "http://vclau1p0314.cna.com:8081/repository/spring-snapshot/"
-	}
+	mavenCentral()
 }
 
 dependencies {

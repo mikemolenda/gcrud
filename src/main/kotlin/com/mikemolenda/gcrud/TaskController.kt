@@ -1,4 +1,4 @@
-package com.cna.gcrud
+package com.mikemolenda.gcrud
 
 import com.google.cloud.datastore.*
 import org.springframework.http.MediaType
@@ -17,17 +17,9 @@ class TaskController {
     fun createEntity(@RequestBody(required = true) task: Task): Response {
         return try {
             val keyFactory = datastore.newKeyFactory().setKind("Task")
-//            val taskKey = datastore.allocateId(keyFactory.newKey())
-//            val taskEntity = Entity
-//                    .newBuilder(taskKey)
-//                    .set("category", task.category)
-//                    .set("priority", task.priority)
-//                    .set("description", task.description)
-//                    .set("done", task.done)
-//                    .build()
-//            datastore.put(taskEntity)
+            val taskKey = datastore.allocateId(keyFactory.newKey())
             val taskEntity = Entity
-                    .newBuilder(keyFactory.newKey("static"))
+                    .newBuilder(taskKey)
                     .set("category", task.category)
                     .set("priority", task.priority)
                     .set("description", task.description)

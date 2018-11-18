@@ -1,4 +1,4 @@
-package com.cna.gcrud
+package com.mikemolenda.gcrud
 
 import org.junit.Test
 import org.junit.runner.RunWith
